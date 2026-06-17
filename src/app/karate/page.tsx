@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import BackButton from '@/components/BackButton'
 
 export const metadata: Metadata = {
@@ -21,8 +22,12 @@ function Achievement({ icon, title, desc }: { icon: string; title: string; desc:
 }
 
 const GALLERY = [
-  'Competition','National team','Medal ceremony',
-  'Training session','Coaching kids','Team photo',
+  { src: '/karate/img_1456.jpg', caption: 'Competition' },
+  { src: '/karate/img_1778.jpg', caption: 'Training session' },
+  { src: '/karate/img_2431.jpg', caption: 'Coaching kids' },
+  { src: '/karate/img_3764.jpg', caption: 'National team' },
+  { src: '/karate/img_4866.jpg', caption: 'Medal ceremony' },
+  { src: '/karate/img_7452.jpg', caption: 'Team photo' },
 ]
 
 export default function Karate() {
@@ -51,20 +56,21 @@ export default function Karate() {
       <hr className="border-border my-11" />
 
       <h2 className="text-base font-semibold text-[#e2e8f0] mb-3.5">Gallery</h2>
-      <p className="text-[0.78rem] text-[#64748b] mb-4">
-        Add your photos here — competitions, training, team shots, coaching sessions.
-      </p>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-2.5">
-        {GALLERY.map((caption) => (
-          <div key={caption}
-            className="aspect-[4/3] bg-surface border border-dashed border-border rounded-lg
-              flex flex-col items-center justify-center gap-2 text-[#2d3748]
-              text-[0.72rem] text-center p-3 cursor-pointer
-              hover:border-accent-mid hover:text-[#64748b] transition-all duration-200">
-            <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current opacity-30">
-              <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
-            </svg>
-            {caption}
+        {GALLERY.map(({ src, caption }) => (
+          <div key={src} className="group relative aspect-[4/3] overflow-hidden rounded-lg bg-surface">
+            <Image
+              src={src}
+              alt={caption}
+              fill
+              className="object-cover transition-transform duration-300 group-hover:scale-105"
+              sizes="(max-width: 768px) 50vw, 33vw"
+            />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300" />
+            <span className="absolute bottom-2 left-2.5 text-[0.7rem] font-medium text-white
+              opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              {caption}
+            </span>
           </div>
         ))}
       </div>

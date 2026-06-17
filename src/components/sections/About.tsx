@@ -21,8 +21,10 @@ export default function About() {
         <p>
           Outside of code I&apos;m a{' '}
           <Link href="/karate"
-            className="text-accent border-b border-accent-mid hover:border-accent transition-colors duration-200">
+            className="text-accent underline underline-offset-2 decoration-accent/40
+              hover:decoration-accent transition-colors duration-200 inline-flex items-baseline gap-0.5">
             former Ukraine national team karate athlete
+            <span className="text-[0.7rem] leading-none">↗</span>
           </Link>{' '}
           — which taught me discipline, pressure management, and how to lead. I also
           coached 20+ children as a martial arts instructor in Kyiv.

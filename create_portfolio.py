@@ -4,7 +4,7 @@ Hlib Pakhomov Portfolio — full Next.js scaffolder.
 Run:  python3 create_portfolio.py
 Then: cd hlib-portfolio && npm run dev
 """
-import pathlib, subprocess, sys
+import pathlib, subprocess, sys, webbrowser, threading, time, urllib.request
 
 ROOT = pathlib.Path(__file__).parent / "hlib-portfolio"
 
@@ -838,7 +838,7 @@ import type { Metadata } from 'next'
 import BackButton from '@/components/BackButton'
 
 export const metadata: Metadata = {
-  title: 'Karate | Hlib Pakhomov',
+  title: 'Karate | Glib Pakhomov',
   description: 'Former Ukraine national team karate athlete.',
 }
 
@@ -949,24 +949,31 @@ try:
         print("  ✗  npm install failed — run it manually inside hlib-portfolio/")
         if r.stderr:
             print(r.stderr[:500])
+        sys.exit(1)
 except FileNotFoundError:
     print("  ✗  npm not found — install Node.js first, then run: cd hlib-portfolio && npm install")
+    sys.exit(1)
 except Exception as e:
     print(f"  ✗  {e}")
+    sys.exit(1)
 
 print()
 print("=" * 52)
 print(f"  Project:  {ROOT}")
 print()
-print("  Dev server:")
-print("    cd hlib-portfolio")
-print("    npm run dev          # → http://localhost:3000")
-print()
-print("  Push to GitHub:")
-print("    cd hlib-portfolio")
-print("    git init && git add . && git commit -m 'init'")
-print("    gh repo create hlib-portfolio --public --source=. --push")
-print()
-print("  Deploy (Vercel):")
-print("    npx vercel")
+print("Starting dev server at http://localhost:3000 ...")
+print("  (press Ctrl+C to stop)")
 print("=" * 52)
+
+def _open_when_ready():
+    for _ in range(60):
+        time.sleep(1)
+        try:
+            urllib.request.urlopen("http://localhost:3000", timeout=1)
+            webbrowser.open("http://localhost:3000")
+            return
+        except Exception:
+            pass
+
+threading.Thread(target=_open_when_ready, daemon=True).start()
+subprocess.run(["npm", "run", "dev"], cwd=ROOT)
