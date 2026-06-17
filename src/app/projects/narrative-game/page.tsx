@@ -64,45 +64,16 @@ export default function NarrativeGame() {
       <hr className="border-border my-11" />
       <h2 className="text-base font-semibold text-[#e2e8f0] mb-4">Team &amp; Responsibilities</h2>
       <div className="space-y-2">
-        {[
-          {
-            name: 'Hlib (me)',
-            role: 'Team Lead · Core Systems',
-            detail: 'Data structures, rewind system, clue manager, analysis dashboard, evidence panel, team coordination.',
-            highlight: true,
-          },
-          {
-            name: 'Wu (ZhengJiang)',
-            role: 'Algorithms · Game Engine',
-            detail: 'DFS, BFS, insertion sort, topological sort, and the engine driving all game state.',
-            highlight: false,
-          },
-          {
-            name: 'Melih',
-            role: 'Story Graph',
-            detail: 'All 40+ scenes, branching dialogue, clue placements, and four endings.',
-            highlight: false,
-          },
-          {
-            name: 'Sylvie',
-            role: 'Main GUI · Functions',
-            detail: 'Main menu, toolbar, status bar, and supporting utility functions.',
-            highlight: false,
-          },
-        ].map(({ name, role, detail, highlight }) => (
-          <div key={name}
-            className={`flex gap-4 p-4 rounded-lg border ${highlight ? 'bg-surface border-accent/30' : 'bg-surface border-border'}`}>
-            <div className="w-1 rounded-full flex-shrink-0 self-stretch"
-              style={{ background: highlight ? '#6366f1' : '#2a2a2a' }} />
-            <div>
-              <div className="flex items-baseline gap-2 flex-wrap">
-                <span className={`text-[0.875rem] font-semibold ${highlight ? 'text-accent' : 'text-[#e2e8f0]'}`}>{name}</span>
-                <span className="font-mono text-[0.7rem] text-[#64748b]">{role}</span>
-              </div>
-              <p className="text-[0.83rem] text-[#64748b] mt-1 leading-relaxed">{detail}</p>
+        <div className="flex gap-4 p-4 rounded-lg border bg-surface border-accent/30">
+          <div className="w-1 rounded-full flex-shrink-0 self-stretch" style={{ background: '#6366f1' }} />
+          <div>
+            <div className="flex items-baseline gap-2 flex-wrap">
+              <span className="text-[0.875rem] font-semibold text-accent">Hlib (me)</span>
+              <span className="font-mono text-[0.7rem] text-[#64748b]">Team Lead · Core Systems</span>
             </div>
+            <p className="text-[0.83rem] text-[#64748b] mt-1 leading-relaxed">Implemented core game systems using OOP, custom data structures, state management, clue tracking, evidence analysis, and team coordination.</p>
           </div>
-        ))}
+        </div>
       </div>
 
       {/* ── What I Built ──────────────────────────────── */}
@@ -159,6 +130,12 @@ export default function NarrativeGame() {
             ext: 'PDF',
             label: 'Technical Report',
             desc: 'Design decisions, implementation details, and testing evidence for the components I built.',
+          },
+          {
+            href: '/narrative-game-user-guide.docx',
+            ext: 'DOC',
+            label: 'User Guide',
+            desc: 'Step-by-step guide covering installation, controls, and gameplay mechanics.',
           },
           {
             href: '/whispers-at-victors-manor.py',

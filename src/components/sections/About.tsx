@@ -1,10 +1,11 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import Tag from '@/components/Tag'
 import SectionLabel from '@/components/SectionLabel'
 
 const SKILLS = [
-  'Python','Git & GitHub','Data Structures','OOP',
-  'API Integration','Data Analysis','Algorithms','Matplotlib',
+  'Python','Git & GitHub','Data Structures',
+  'API Integration','Data Analysis','Matplotlib',
 ]
 
 export default function About() {
@@ -21,10 +22,8 @@ export default function About() {
         <p>
           Outside of code I&apos;m a{' '}
           <Link href="/karate"
-            className="text-accent underline underline-offset-2 decoration-accent/40
-              hover:decoration-accent transition-colors duration-200 inline-flex items-baseline gap-0.5">
+            className="text-accent border-b border-accent-mid hover:border-accent transition-colors duration-200">
             former Ukraine national team karate athlete
-            <span className="text-[0.7rem] leading-none">↗</span>
           </Link>{' '}
           — which taught me discipline, pressure management, and how to lead. I also
           coached 20+ children as a martial arts instructor in Kyiv.
@@ -35,9 +34,27 @@ export default function About() {
           gain hands-on experience and contribute to real projects.
         </p>
       </div>
-      <div className="flex flex-wrap gap-2 mt-9">
+      <div className="mt-8 w-[200px]">
+        <div className="rounded-lg overflow-hidden border border-border" style={{ aspectRatio: '210 / 297' }}>
+          <Image src="/photo-1.jpg" alt="Hlib in the mountains" width={3024} height={4032}
+            className="w-full h-full object-cover object-center" />
+        </div>
+      </div>
+      <div className="flex flex-wrap gap-2 mt-7">
         {SKILLS.map((s) => <Tag key={s}>{s}</Tag>)}
       </div>
+      <a href="/resume.pdf" download
+        className="mt-6 inline-flex items-center gap-2
+          px-5 py-2.5 rounded-lg
+          text-[0.8rem] font-semibold text-[#fca5a5]
+          border border-[#7f1d1d]/60 bg-[#7f1d1d]/20
+          hover:bg-[#7f1d1d]/40 hover:border-[#ef4444]/50
+          transition-all duration-200">
+        <svg viewBox="0 0 24 24" className="w-3.5 h-3.5 fill-current flex-shrink-0">
+          <path d="M12 16l-6-6h4V4h4v6h4l-6 6zm-6 2h12v2H6v-2z"/>
+        </svg>
+        Download Résumé
+      </a>
     </section>
   )
 }

@@ -1,10 +1,12 @@
 'use client'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 const SECTIONS = [
   { id: 'about',     label: 'About' },
   { id: 'education', label: 'Education' },
   { id: 'projects',  label: 'Projects' },
+  { id: 'writing',   label: 'Researches' },
   { id: 'contact',   label: 'Contact' },
 ]
 
@@ -23,13 +25,15 @@ export default function Nav() {
   const scrollTo = (id: string) =>
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 
+  const itemClass = (on: boolean) =>
+    `flex items-center gap-3.5 py-1.5 w-fit group cursor-pointer`
+
   return (
     <nav className="mt-11 flex flex-col gap-0.5">
       {SECTIONS.map(({ id, label }) => {
         const on = active === id
         return (
-          <button key={id} onClick={() => scrollTo(id)}
-            className="flex items-center gap-3.5 py-1.5 w-fit group cursor-pointer">
+          <button key={id} onClick={() => scrollTo(id)} className={itemClass(on)}>
             <span className={`h-px transition-all duration-200 ${on
               ? 'w-12 bg-[#e2e8f0]'
               : 'w-6 bg-[#64748b] group-hover:w-12 group-hover:bg-[#e2e8f0]'}`} />
@@ -41,6 +45,12 @@ export default function Nav() {
           </button>
         )
       })}
+      <Link href="/karate" className="flex items-center gap-3.5 py-1.5 w-fit group">
+        <span className="h-px w-6 bg-[#64748b] group-hover:w-12 group-hover:bg-[#e2e8f0] transition-all duration-200" />
+        <span className="text-[0.7rem] font-semibold tracking-[0.15em] uppercase text-[#64748b] group-hover:text-[#e2e8f0] transition-colors duration-200">
+          Karate
+        </span>
+      </Link>
     </nav>
   )
 }

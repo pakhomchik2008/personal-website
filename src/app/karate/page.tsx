@@ -3,7 +3,7 @@ import Image from 'next/image'
 import BackButton from '@/components/BackButton'
 
 export const metadata: Metadata = {
-  title: 'Karate | Hlib Pakhomov',
+  title: 'Karate | Glib Pakhomov',
   description: 'Former Ukraine national team karate athlete.',
 }
 
