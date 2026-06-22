@@ -43,7 +43,7 @@ export default function About() {
       <div className="flex flex-wrap gap-2 mt-7">
         {SKILLS.map((s) => <Tag key={s}>{s}</Tag>)}
       </div>
-      <a href="/resume.pdf" download
+      <a href="/Hlib Pakhomov.pdf" download
         className="mt-6 inline-flex items-center gap-2
           px-5 py-2.5 rounded-lg
           text-[0.8rem] font-semibold text-[#fca5a5]
