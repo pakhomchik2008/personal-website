@@ -3,6 +3,7 @@ import Socials from '@/components/Socials'
 import About from '@/components/sections/About'
 import Education from '@/components/sections/Education'
 import Projects from '@/components/sections/Projects'
+import Experience from '@/components/sections/Experience'
 import Writing from '@/components/sections/Writing'
 import Contact from '@/components/sections/Contact'
 
@@ -25,7 +26,7 @@ export default function Home() {
           </h1>
 
           <div className="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1 max-w-[240px]">
-            {['Computer Science (BSc)', 'University of Warwick', 'CS Student & Developer', 'Karate Athlete'].map((item, i, arr) => (
+            {['Computer Systems Engineering (BEng)', 'University of Warwick', 'Developer & Founder', 'Karate Athlete'].map((item, i, arr) => (
               <span key={item} className="flex items-center gap-x-2">
                 <span className="text-[0.75rem] text-[#94a3b8] font-medium">{item}</span>
                 {i < arr.length - 1 && (
@@ -42,6 +43,7 @@ export default function Home() {
         <About />
         <Education />
         <Projects />
+        <Experience />
         <Writing />
         <Contact />
       </main>

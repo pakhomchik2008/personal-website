@@ -81,8 +81,12 @@ export default function Karate() {
       <div className="space-y-2.5">
         <Achievement icon="🇺🇦" title="Ukraine National Team"
           desc="Selected to represent Ukraine at national level in competitive karate" />
-        <Achievement icon="🥋" title="Martial Arts Instructor — Kyiv"
-          desc="Coached 20+ children aged 6–12, planning and leading structured weekly training sessions" />
+        <Achievement icon="🥇" title="European Ranking #1 (2024) · World #24"
+          desc="2× National Champion and 3× World Cup medallist" />
+        <Achievement icon="🎖️" title="National Team Captain — 2024 European Championships"
+          desc="Captained the team, which finished 2nd in the overall medal table" />
+        <Achievement icon="🥋" title="Children's Karate Coach & Mentor — Coventry"
+          desc="Coach a weekly group of ~20 children with individual feedback every session; brought 10 athletes to international level" />
         <Achievement icon="🏆" title="Sports Scholarship — University of Warwick"
           desc="Awarded a sports scholarship alongside academic admission to Warwick's CS programme" />
       </div>

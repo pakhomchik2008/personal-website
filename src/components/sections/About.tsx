@@ -4,8 +4,9 @@ import Tag from '@/components/Tag'
 import SectionLabel from '@/components/SectionLabel'
 
 const SKILLS = [
-  'Python','Git & GitHub','Data Structures',
-  'API Integration','Data Analysis','Matplotlib',
+  'Python','Java','SQL','Git & GitHub','Linux/Unix',
+  'Supabase','Vercel','Stripe','RevenueCat',
+  'Claude Code','Cursor','Prompt Engineering','API Integration','Matplotlib',
 ]
 
 export default function About() {
@@ -14,10 +15,14 @@ export default function About() {
       <SectionLabel>About</SectionLabel>
       <div className="space-y-3.5 text-[0.9rem] text-[#94a3b8] leading-relaxed max-w-[580px]">
         <p>
-          I&apos;m an incoming Computer Science student at the{' '}
-          <span className="text-accent">University of Warwick</span>, combining strong
-          academic performance with a sports scholarship. Ambitious, driven, and
-          focused on building a career in tech.
+          I&apos;m a Computer Systems Engineering student at the{' '}
+          <span className="text-accent">University of Warwick</span> on an Academic and
+          Sports Scholarship, and the course representative for ~120 students. I founded{' '}
+          <a href="https://examik.net" target="_blank" rel="noopener noreferrer"
+            className="text-accent border-b border-accent-mid hover:border-accent transition-colors duration-200">
+            Examik
+          </a>
+          , a live AI exam-prep platform with subscriptions.
         </p>
         <p>
           Outside of code I&apos;m a{' '}
@@ -25,8 +30,8 @@ export default function About() {
             className="text-accent border-b border-accent-mid hover:border-accent transition-colors duration-200">
             former Ukraine national team karate athlete
           </Link>{' '}
-          — which taught me discipline, pressure management, and how to lead. I also
-          coached 20+ children as a martial arts instructor in Kyiv.
+          — which taught me discipline, pressure management, and how to lead. I now
+          coach a weekly karate group of ~20 children in Coventry and tutor IB Maths.
         </p>
         <p>
           Currently looking for a{' '}

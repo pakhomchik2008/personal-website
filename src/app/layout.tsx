@@ -9,10 +9,10 @@ const mono  = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mono', disp
 export const metadata: Metadata = {
   title: 'Hlib Pakhomov',
   description:
-    'CS student at University of Warwick. Aspiring software developer. Former Ukraine national team karate athlete.',
+    'Computer Systems Engineering student at the University of Warwick. Founder of Examik. Former Ukraine national team karate athlete.',
   openGraph: {
     title: 'Hlib Pakhomov',
-    description: 'CS Student at Warwick. Building things with Python.',
+    description: 'Computer Systems Engineering student at Warwick. Founder of Examik.',
     type: 'website',
   },
 }

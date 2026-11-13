@@ -4,12 +4,6 @@ import Tag from '@/components/Tag'
 
 const WRITING = [
   {
-    title: 'Digital Divide Research — UK',
-    href: '/projects/digital-divide',
-    desc: 'Independent analysis of UK broadband inequality 2015–2025. Revealed the divide shifted from an access gap to a performance gap.',
-    tags: ['Python', 'Matplotlib', 'Linear Regression', 'Statistics'],
-  },
-  {
     title: 'Cryptocurrency & Blockchain — Ethics Essay',
     href: '/projects/cryptocurrency-essay',
     desc: 'Academic essay on why the ethical challenges of cryptocurrency are structurally embedded in its architecture — not incidental.',

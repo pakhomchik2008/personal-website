@@ -4,10 +4,35 @@ import Tag from '@/components/Tag'
 
 const PROJECTS = [
   {
+    title: 'Examik',
+    href: '/projects/examik',
+    summary: 'Problem: exam material existed, but nothing clearly explained why an answer was wrong. Solution: an AI exam-prep platform with live subscriptions.',
+    desc: 'Solo-founded, live product covering 5+ core syllabuses (A levels, GCSE, SAT and more). Built end-to-end with AI-assisted development (Claude Code, Cursor), ~977 automated tests. Supabase backend on Vercel, Stripe and RevenueCat subscriptions, iOS build via Capacitor.',
+    tags: ['AI', 'Supabase', 'Vercel', 'Stripe', 'RevenueCat', 'Capacitor'],
+    liveHref: 'https://examik.net',
+  },
+  {
+    title: 'Internet Divide in the UK, 2015–2025',
+    href: '/projects/digital-divide',
+    summary: 'Problem: does the UK digital divide still exist? Solution: independent data analysis across urban/rural areas and the 4 UK nations.',
+    desc: 'Independent research on digital inequality. Python for data processing and Matplotlib for the trends; distinction awarded and findings presented to ~500 peers and teachers.',
+    tags: ['Python', 'Matplotlib', 'Data Analysis', 'Research'],
+    showDetail: true,
+  },
+  {
+    title: 'Flat-Matcher',
+    href: '/projects/flatmate-matcher',
+    summary: 'Problem: finding compatible flatmates at university. Solution: a weighted 10-question quiz that scores lifestyle compatibility from 0 to 100.',
+    desc: 'Full-stack web app that pairs UK university students with compatible flatmates. Helped ~100 UK students find their flatmates. Features real-time messaging, profile management, and a guest demo mode.',
+    tags: ['TypeScript', 'Full-Stack', 'Matching Algorithm'],
+    githubHref: 'https://github.com/pakhomchik2008/flatmate-matcher',
+    liveHref: 'https://www.flat-matcher.com',
+  },
+  {
     title: "Whispers at Victor's Manor",
     href: '/projects/narrative-game',
     summary: 'Problem: build a branching mystery game from scratch. Solution: heap-based clue engine, stack-driven undo, and a 40-scene narrative in Python.',
-    desc: 'Desktop mystery game built as team lead and core developer. Implements custom data structures, OOP architecture, and a tkinter GUI with a live evidence panel.',
+    desc: 'University course group project (team of 4): built as team lead and core developer, covering ~30 Python topics. High distinction; second best project in the group. Implements custom data structures, OOP architecture, and a tkinter GUI with a live evidence panel.',
     tags: ['Python', 'tkinter', 'Data Structures', 'Team Lead'],
     codeHref: '/whispers-at-victors-manor.py',
     codeLabel: 'Source (.py)',
@@ -30,23 +55,6 @@ const PROJECTS = [
     desc: 'SaaS that analyses your LinkedIn analytics and coaches you on what to post next, with a confirm-then-post publishing flow (no auto-posting). Built with Next.js, Postgres/Prisma, and Claude.',
     tags: ['TypeScript', 'Next.js', 'Postgres', 'AI', 'In Development'],
     inProgress: true,
-  },
-  {
-    title: 'Crypto Trading Agent',
-    href: '/projects/crypto-trading-agent',
-    summary: 'Automated crypto observer for BingX perpetual futures — reads the market and logs signals, no live trading yet.',
-    desc: 'Stage-one "observer" bot for BTC-USDT and ETH-USDT on 1h timeframes: computes signals and writes a trade journal on a demo account, with no order-placement code present by design. Built with Python.',
-    tags: ['Python', 'Trading', 'BingX API', 'In Development'],
-    inProgress: true,
-  },
-  {
-    title: 'Flatmate Matcher',
-    href: '/projects/flatmate-matcher',
-    summary: 'Problem: finding compatible flatmates at university. Solution: a weighted 10-question quiz that scores lifestyle compatibility from 0 to 100.',
-    desc: 'Full-stack web app that pairs UK university students with compatible flatmates. Features real-time messaging, profile management, and a guest demo mode.',
-    tags: ['TypeScript', 'Full-Stack', 'Matching Algorithm'],
-    githubHref: 'https://github.com/pakhomchik2008/flatmate-matcher',
-    liveHref: 'https://www.flat-matcher.com',
   },
 ]
 
